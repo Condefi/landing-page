@@ -9,14 +9,13 @@ const ThemeSwitch = () => {
 
   return (
     <Button
-      variant="default"
-      size="icon"
-      aria-label="Toggle Theme"
       onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-      className="rounded-xl h-10 w-10"
+      variant="secondary"
+      size="icon"
+      className="bg-background rounded-2xl !p-0 shadow-lg border border-gray-300 dark:border-gray-700 hover:bg-background/80"
     >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-white" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-white" />
+      <Sun className="absolute h-5 w-5 rotate-0 scale-100 transition-transform duration-200 dark:-rotate-90 dark:scale-0 text-primary" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-transform duration-200 dark:rotate-0 dark:scale-100 text-primary" />
       <span className="sr-only">Toggle Theme</span>
     </Button>
   );

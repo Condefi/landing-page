@@ -414,7 +414,7 @@ export function AboutUs() {
           <h2 className="text-center text-xl md:text-4xl font-bold text-foreground">
             Connecting Worldwide Liquidity
           </h2>
-          <p className="text-center text-base md:text-lg font-normal text-muted-foreground max-w-md mt-2 mx-auto">
+          <p className="text-center text-base md:text-lg font-normal text-gray-400 max-w-md mt-2 mx-auto">
             Allowing you to buy assets in the UAE and beyond, without the need
             for local residency.
           </p>

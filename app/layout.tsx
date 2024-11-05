@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <SEO />
       <body className={cn(poppins.variable, robotoMono.variable)}>
-        <div className="relative flex min-h-screen flex-col transition-colors duration-300 bg-gray-100 dark:bg-[#1E1D1D] font-poppins">
+        <div className="relative flex min-h-screen flex-col transition-colors duration-300 bg-gray-100 dark:bg-transparent font-poppins">
           <Header />
           <main className="flex-1 transition-colors duration-300 ">
             {children}

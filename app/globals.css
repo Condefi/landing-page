@@ -11,7 +11,6 @@ body {
     text-wrap: balance;
   }
 }
-
 @layer base {
   :root {
     --background: 220 12% 95%; /* Soft Gray - #F2F4F7 */
@@ -26,7 +25,7 @@ body {
     --secondary-foreground: 0 0% 98%; /* Ivory White */
     --muted: 210 15% 90%; /* Lightened Slate Blue for subtle accents */
     --muted-foreground: 210 25% 16%; /* Charcoal for readability */
-    --accent: 46 78% 50%; /* Gold - #D4AF37 */
+    --accent: 217 83% 58%; /* Between gradient-start and gradient-end */
     --accent-foreground: 0 0% 98%; /* Ivory White */
     --destructive: 5 72% 54%; /* Crimson Red - #E74C3C */
     --destructive-foreground: 0 0% 98%; /* Ivory White */
@@ -38,7 +37,14 @@ body {
     --chart-3: 46 78% 50%; /* Gold */
     --chart-4: 5 72% 54%; /* Crimson Red */
     --chart-5: 240 5% 98%; /* Ivory White */
+    --gradient-start: 239 100% 66%;
+    --gradient-end: 195 100% 50%;
     --radius: 0.5rem;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
   }
   .dark {
     --background: 210 20% 16%; /* Deep Blue Gray - #1A242F */
@@ -53,7 +59,7 @@ body {
     --secondary-foreground: 0 0% 98%; /* Ivory White */
     --muted: 210 15% 25%; /* Muted Slate Blue */
     --muted-foreground: 46 78% 50%; /* Gold */
-    --accent: 46 78% 50%; /* Soft Gold - #EED8AE for dark mode */
+    --accent: 217 83% 58%; /* Between gradient-start and gradient-end */
     --accent-foreground: 0 0% 98%; /* Ivory White */
     --destructive: 5 72% 40%; /* Darkened Crimson Red */
     --destructive-foreground: 0 0% 98%; /* Ivory White */
@@ -65,6 +71,9 @@ body {
     --chart-3: 46 78% 50%; /* Gold */
     --chart-4: 5 72% 54%; /* Crimson Red */
     --chart-5: 240 5% 98%; /* Ivory White */
+    --radius: 0.5rem;
+    --gradient-start: 239 100% 66%;
+    --gradient-end: 195 100% 50%;
   }
 }
 

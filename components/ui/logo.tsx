@@ -2,13 +2,18 @@ import Logo from "@/public/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const MainLogo = () => {
+interface MainLogoProps {
+  height?: number;
+  width?: number;
+}
+
+const MainLogo = ({ height = 128, width = 128 }: MainLogoProps) => {
   return (
     <Link
       href="/"
       className="flex flex-row items-center justify-center gap-2 cursor-pointer mr-4"
     >
-      <Image src={Logo} alt="Factor Studio" height={25} width={25} />
+      <Image src={Logo} alt="Factor Studio" height={height} width={width} />
     </Link>
   );
 };

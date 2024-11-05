@@ -26,23 +26,26 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 py-4 bg-gray-100 dark:bg-[#1E1D1D]",
-        showHeader ? "translate-y-0" : "-translate-y-full"
+        "sticky top-0 z-50 w-full transition-all duration-300 py-4 bg-gray-100 dark:bg-transparent",
+        showHeader ? "translate-y-0 !rounded-b-2xl" : "-translate-y-full"
       )}
     >
-      <div className="md:container flex h-14 items-center justify-between px-4 w-full">
+      <div className="flex h-14 items-center justify-between px-24 w-full">
         <div className="flex items-center">
           <MainLogo />
         </div>
         <div className="flex items-center gap-2">
-          {!isMobile && (
-            <>
-              <ThemeSwitch />
-            </>
-          )}
-          <a href={"https://app.condefi.com"} target="_blank" rel="noreferrer">
-            <HoverBorderGradient>Launch App</HoverBorderGradient>
-          </a>
+          <ThemeSwitch />
+          <HoverBorderGradient className="text-sm font-medium text-primary-foreground">
+            <a
+              href={"https://app.condefi.com"}
+              target="_blank"
+              rel="noreferrer"
+              className="w-auto text-primary z-10 bg-background px-4 py-2 rounded-[inherit]"
+            >
+              Launch App
+            </a>
+          </HoverBorderGradient>
         </div>
       </div>
     </header>
