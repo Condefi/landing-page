@@ -411,13 +411,23 @@ export function AboutUs() {
           }}
           className="div"
         >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-foreground">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-center text-xl md:text-4xl font-bold text-foreground"
+          >
             Connecting Worldwide Liquidity
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-gray-400 max-w-md mt-2 mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-center text-base md:text-lg font-normal text-foreground max-w-md mt-2 mx-auto"
+          >
             Allowing you to buy assets in the UAE and beyond, without the need
             for local residency.
-          </p>
+          </motion.p>
         </motion.div>
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-background z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
