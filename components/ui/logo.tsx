@@ -1,7 +1,6 @@
-import Logo from "@/public/assets/logo.png";
+import Logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-
 interface MainLogoProps {
   height?: number;
   width?: number;
