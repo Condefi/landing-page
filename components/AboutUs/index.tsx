@@ -397,8 +397,8 @@ export default function AboutUs() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-background bg-background relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+    <div className="flex flex-col items-center justify-start py-12 md:py-24 lg:min-h-[calc(100vh-2rem)] dark:bg-background bg-background relative w-full">
+      <div className="max-w-7xl mx-auto w-full relative h-full px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{
             opacity: 0,
@@ -411,13 +411,13 @@ export default function AboutUs() {
           transition={{
             duration: 1,
           }}
-          className="div"
+          className="relative z-20"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold"
+            className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold"
           >
             Connecting Worldwide Liquidity
           </motion.h2>
@@ -425,15 +425,19 @@ export default function AboutUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-center text-base md:text-lg font-normal text-foreground max-w-md mt-2 mx-auto"
+            className="text-center text-sm md:text-lg font-normal text-foreground max-w-md mt-4 mx-auto px-4"
           >
             Allowing you to buy assets in the UAE and beyond, without the need
             for local residency.
           </motion.p>
         </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-background z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+
+        {/* Globe Container */}
+        <div className="relative w-full mt-8 md:mt-12">
+          <div className="absolute w-full inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-background z-40 bottom-0" />
+          <div className="h-[300px] md:h-[500px] lg:h-[600px] w-full relative">
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </div>
         </div>
       </div>
     </div>

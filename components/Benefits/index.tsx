@@ -55,42 +55,46 @@ const Benefits = () => {
   ];
 
   return (
-    <div className="py-20 px-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="py-10 md:py-20 px-12 lg:px-24 bg-background">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold">
+          <h2 className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold">
             Benefits of Condefi
           </h2>
-          <p className="mt-4 text-lg text-foreground max-w-2xl mx-auto">
+          <p className="mt-2 md:mt-4 text-base md:text-lg text-foreground max-w-2xl mx-auto px-4">
             Creating value for both hotel management groups and unit owners
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32">
           {benefits.map((benefit, index) => (
             <BackgroundGradient
               key={index}
-              className="p-8 rounded-3xl bg-background/80 backdrop-blur-lg relative group"
+              className="p-4 md:p-8 rounded-3xl bg-background/80 backdrop-blur-lg relative group"
             >
-              <div className="absolute -top-6 left-8 bg-primary/10 p-3 rounded-2xl group-hover:scale-110 transition-transform">
-                <benefit.icon className="w-8 h-8 text-primary" />
+              <div className="absolute -top-6 left-4 md:left-8 bg-primary/10 p-2 md:p-3 rounded-2xl group-hover:scale-110 transition-transform">
+                <benefit.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
               <div className="flex flex-col justify-center items-center flex-grow">
-                <h3 className="text-xl font-semibold mb-6 mt-4">
+                <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 mt-4">
                   {benefit.title}
                 </h3>
-                <div className="text-foreground mb-6 space-y-8">
+                <div className="text-foreground mb-4 md:mb-6 space-y-6 md:space-y-8">
                   {benefit.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex items-start gap-3">
-                      <item.icon className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <item.icon className="w-4 h-4 md:w-5 md:h-5 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold">{item.title}</h4>
-                        <p>{item.description}</p>
+                        <h4 className="font-semibold text-sm md:text-base">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm md:text-base">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -100,7 +104,7 @@ const Benefits = () => {
                     href={benefit.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="block text-center text-sm font-medium bg-background text-primary z-10 px-4 py-2 rounded-[inherit]"
+                    className="block text-center text-xs md:text-sm font-medium bg-background text-primary z-10 px-3 md:px-4 py-2 rounded-[inherit]"
                   >
                     Learn More
                   </a>
