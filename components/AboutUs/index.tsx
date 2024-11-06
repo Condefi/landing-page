@@ -415,7 +415,7 @@ export function AboutUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-center text-xl md:text-4xl font-bold text-foreground"
+            className="text-lg md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold"
           >
             Connecting Worldwide Liquidity
           </motion.h2>

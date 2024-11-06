@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary text-center"
+                className="text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold"
               >
                 Revolutionizing Real Estate Investment
               </motion.h1>
