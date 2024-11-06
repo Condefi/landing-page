@@ -1,6 +1,5 @@
 "use client";
 
-import { BRAND_NAME } from "@/lib/config";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import MainLogo from "../ui/logo";
 

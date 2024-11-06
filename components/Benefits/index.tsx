@@ -1,17 +1,14 @@
 "use client";
 
-import React from "react";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { motion } from "framer-motion";
 import {
   Building2,
   Coins,
-  Smartphone,
   LineChart,
   Target,
   TrendingUp,
   Wallet,
-  BadgeDollarSign,
 } from "lucide-react";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 

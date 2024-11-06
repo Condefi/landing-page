@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
 const Benefits = () => {
@@ -59,8 +58,8 @@ const Benefits = () => {
             </h4>
             <p className="text-card-foreground">
               Easily adjust your real estate portfolio or exit investments
-              through our transparent marketplace that tracks each property's
-              performance.
+              through our transparent marketplace that tracks each
+              property&apos;s performance.
             </p>
           </div>
           <div className="space-y-2">

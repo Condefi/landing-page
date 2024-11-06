@@ -1,11 +1,8 @@
 "use client";
 
-import React from "react";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
-import { Smartphone } from "lucide-react";
-import Image from "next/image";
 import appStore from "@/public/assets/app-store.png";
 import playStore from "@/public/assets/google-play.png";
+import Image from "next/image";
 
 const DownloadApp = () => {
   return (

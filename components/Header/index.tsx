@@ -3,14 +3,12 @@
 import { cn } from "@/lib/utils";
 
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
 
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
-import MainLogo from "../ui/logo";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import MainLogo from "../ui/logo";
 
 const Header = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
   const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {

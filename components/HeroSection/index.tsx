@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { RainbowButton } from "../ui/rainbow-button";
 import { motion } from "framer-motion";
+import React from "react";
+import { RainbowButton } from "../ui/rainbow-button";
 
 const HeroSection: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold"
               >
-                Revolutionizing Real Estate Investment
+                The Condohotel Revolution
               </motion.h1>
 
               {/* Subheading */}
@@ -35,10 +35,9 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="mt-6 text-xl text-foreground max-w-3xl text-balance text-center mx-auto"
               >
-                Simplifying real estate investment through crowdfunding,
-                tokenization, and a marketplace for buying and selling tokenized
-                assets. Making property investment accessible and liquid for
-                everyone.
+                Access fractional property investments through our secure
+                tokenized platform. <br></br>Buy, sell, and trade real estate
+                assets with ease.
               </motion.p>
 
               {/* CTA Buttons */}
