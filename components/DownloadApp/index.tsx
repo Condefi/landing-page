@@ -1,7 +1,7 @@
 "use client";
 
-import appStore from "@/public/assets/app-store.png";
-import playStore from "@/public/assets/google-play.png";
+import appStore from "@/assets/app-store.png";
+import playStore from "@/assets/google-play.png";
 import Image from "next/image";
 
 const DownloadApp = () => {
