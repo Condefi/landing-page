@@ -1,56 +1,53 @@
 "use client";
 
-import { BackgroundGradient } from "@/components/ui/background-gradient";
-import { motion } from "framer-motion";
-import {
-  Building2,
-  Coins,
-  LineChart,
-  Target,
-  TrendingUp,
-  Wallet,
-} from "lucide-react";
-import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import { AnimatePresence, motion } from "framer-motion";
+import { BarChart3, BookOpen, Briefcase, Building2 } from "lucide-react";
+import React from "react";
 
 const Benefits = () => {
   const benefits = [
     {
-      title: "Hotel Management Benefits",
-      icon: Building2,
-      items: [
-        {
-          icon: LineChart,
-          title: "Capital Efficiency",
-          description:
-            "Grow the number of hotels under management without significant real estate investments.",
-        },
-        {
-          icon: Target,
-          title: "Operational Focus",
-          description:
-            "Dedicate resources to managing the hotel and maximizing guest experience rather than property ownership.",
-        },
+      icon: BarChart3,
+      title: "Passive Income",
+      description:
+        "Generate income through rental revenue without property management hassle.",
+      colors: [
+        [59, 130, 246],
+        [139, 92, 246],
       ],
-      link: "https://fund.condefi.com",
+      containerClassName: "bg-emerald-900",
     },
     {
-      title: "Unit Owner Benefits",
-      icon: Coins,
-      items: [
-        {
-          icon: Wallet,
-          title: "Passive Income",
-          description:
-            "Generate stable passive income through rental income, without the hassle of property management.",
-        },
-        {
-          icon: TrendingUp,
-          title: "Real Estate Appreciation",
-          description:
-            "The value of the condotel unit can appreciate over time, offering long-term financial benefits.",
-        },
+      icon: Building2,
+      title: "Real Estate Appreciation",
+      description: "Benefit from long-term property value appreciation.",
+      colors: [
+        [236, 72, 153],
+        [232, 121, 249],
       ],
-      link: "https://buy.condefi.com",
+      containerClassName: "bg-sky-600",
+    },
+    {
+      icon: BookOpen,
+      title: "Complimentary Stay",
+      description:
+        "Free hotel stay annually for 8% ownership, subject to hotel policy.",
+      colors: [
+        [59, 130, 246],
+        [139, 92, 246],
+      ],
+      containerClassName: "bg-purple-900",
+    },
+    {
+      icon: Briefcase,
+      title: "Full Transparency",
+      description: "Detailed annual audit reports from hotel management.",
+      colors: [
+        [236, 72, 153],
+        [232, 121, 249],
+      ],
+      containerClassName: "bg-pink-600",
     },
   ];
 
@@ -66,55 +63,88 @@ const Benefits = () => {
           <h2 className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold">
             Benefits of Condefi
           </h2>
-          <p className="mt-2 md:mt-4 text-base md:text-lg text-foreground max-w-2xl mx-auto px-4">
-            Creating value for both hotel management groups and unit owners
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <BackgroundGradient
+            <Card
               key={index}
-              className="p-4 md:p-8 rounded-3xl bg-background/80 backdrop-blur-lg relative group"
+              icon={<benefit.icon className="w-8 h-8 text-blue-500" />}
             >
-              <div className="absolute -top-6 left-4 md:left-8 bg-primary/10 p-2 md:p-3 rounded-2xl group-hover:scale-110 transition-transform">
-                <benefit.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-              </div>
-              <div className="flex flex-col justify-center items-center flex-grow">
-                <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 mt-4">
+              <CanvasRevealEffect
+                animationSpeed={3}
+                containerClassName={benefit.containerClassName}
+                colors={benefit.colors}
+                dotSize={2}
+              />
+              <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 gap-4">
+                <h2 className="text-xl font-bold text-white text-center text-balance">
                   {benefit.title}
-                </h3>
-                <div className="text-foreground mb-4 md:mb-6 space-y-6 md:space-y-8">
-                  {benefit.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex items-start gap-3">
-                      <item.icon className="w-4 h-4 md:w-5 md:h-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-sm md:text-base">
-                          {item.title}
-                        </h4>
-                        <p className="text-sm md:text-base">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <HoverBorderGradient className="w-full">
-                  <a
-                    href={benefit.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block text-center text-xs md:text-sm font-medium bg-background text-primary z-10 px-3 md:px-4 py-2 rounded-[inherit]"
-                  >
-                    Learn More
-                  </a>
-                </HoverBorderGradient>
+                </h2>
+                <p className="text-white text-center">{benefit.description}</p>
               </div>
-            </BackgroundGradient>
+            </Card>
           ))}
         </div>
       </div>
     </div>
+  );
+};
+
+const Card = ({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children?: React.ReactNode;
+}) => {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="border border-black/[0.2] group/canvas-card flex flex-col items-center justify-start dark:border-white/[0.2] max-w-md w-full mx-auto p-4 relative h-[30rem]"
+    >
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-blue-500" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-blue-500" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-blue-500" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-blue-500" />
+
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full w-full absolute inset-0"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="relative z-20 h-full flex items-center justify-center">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full flex items-center justify-center bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] bg-clip-text">
+          {icon}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Icon = ({ className, ...rest }: any) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className={className}
+      {...rest}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+    </svg>
   );
 };
 

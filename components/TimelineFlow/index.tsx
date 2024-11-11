@@ -1,7 +1,7 @@
 "use client";
 import { Timeline } from "@/components/ui/timeline";
 
-const Benefits = () => {
+const TimelineFlow = () => {
   const timelineData = [
     {
       title: "Crowdfunding",
@@ -81,13 +81,9 @@ const Benefits = () => {
       <h3 className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-center font-sans font-bold">
         How it works
       </h3>
-      <p className="text-base md:text-lg text-foreground max-w-2xl mx-auto text-center mt-2 px-4">
-        Condefi is a platform that allows you to invest in real estate
-        crowdfunding campaigns and trade tokenized real estate assets.
-      </p>
       <Timeline data={timelineData} />
     </div>
   );
 };
 
-export default Benefits;
+export default TimelineFlow;
