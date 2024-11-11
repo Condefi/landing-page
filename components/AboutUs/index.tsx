@@ -427,8 +427,8 @@ export default function AboutUs() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-center text-sm md:text-lg font-normal text-foreground max-w-md mt-4 mx-auto px-4"
           >
-            Allowing you to buy assets in the UAE and beyond, without the need
-            for local residency.
+            Enabling global asset acquisition across multiple jurisdictions,
+            without local residency requirements.
           </motion.p>
         </motion.div>
 

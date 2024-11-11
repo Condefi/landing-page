@@ -24,8 +24,8 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 py-4 bg-gray-100 dark:bg-transparent",
-        showHeader ? "translate-y-0 !rounded-b-2xl" : "-translate-y-full"
+        "fixed top-0 z-50 w-full transition-all duration-300 py-4 bg-transparent",
+        showHeader ? "translate-y-0" : "-translate-y-full"
       )}
     >
       <div className="flex h-14 items-center justify-between px-4 sm:px-6 lg:px-24 w-full">
