@@ -10,6 +10,7 @@ const Benefits = () => {
     {
       icon: BarChart3,
       title: "Passive Income",
+      subtitle: "Generate income without hassle",
       description:
         "Generate income through rental revenue without property management hassle.",
       colors: [
@@ -20,7 +21,8 @@ const Benefits = () => {
     },
     {
       icon: Building2,
-      title: "Real Estate Appreciation",
+      title: "Price Appreciation",
+      subtitle: "Long-term value growth and tax benefits",
       description: "Benefit from long-term property value appreciation.",
       colors: [
         [236, 72, 153],
@@ -31,6 +33,7 @@ const Benefits = () => {
     {
       icon: BookOpen,
       title: "Complimentary Stay",
+      subtitle: "Annual free stays for 8% ownership andm or more",
       description:
         "Free hotel stay annually for 8% ownership, subject to hotel policy.",
       colors: [
@@ -42,6 +45,7 @@ const Benefits = () => {
     {
       icon: Briefcase,
       title: "Full Transparency",
+      subtitle: "Detailed reporting",
       description: "Detailed annual audit reports from hotel management.",
       colors: [
         [236, 72, 153],
@@ -70,6 +74,10 @@ const Benefits = () => {
             <Card
               key={index}
               icon={<benefit.icon className="w-8 h-8 text-blue-500" />}
+              title={benefit.title}
+              subtitle={benefit.subtitle}
+              description={benefit.description}
+              alignStart={benefit.title === "Real Estate Appreciation"}
             >
               <CanvasRevealEffect
                 animationSpeed={3}
@@ -77,13 +85,6 @@ const Benefits = () => {
                 colors={benefit.colors}
                 dotSize={2}
               />
-              <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 gap-4">
-                <h2 className="text-xl font-bold text-white text-center text-balance">
-                  {benefit.title}
-                </h2>
-                <p className="text-white text-center">{benefit.description}</p>
-              </div>
             </Card>
           ))}
         </div>
@@ -94,10 +95,18 @@ const Benefits = () => {
 
 const Card = ({
   icon,
+  title,
+  subtitle,
+  description,
   children,
+  alignStart = false,
 }: {
   icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  description: string;
   children?: React.ReactNode;
+  alignStart?: boolean;
 }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -116,17 +125,34 @@ const Card = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="h-full w-full absolute inset-0"
           >
             {children}
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+              <p className="text-white text-center leading-relaxed">
+                {description}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 h-full flex items-center justify-center">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full flex items-center justify-center bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] bg-clip-text">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-4">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200">
           {icon}
         </div>
+        <h2
+          className={`text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200 ${
+            alignStart ? "text-left w-full" : "text-center"
+          }`}
+        >
+          {title}
+        </h2>
+        <p className="text-center text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200">
+          {subtitle}
+        </p>
       </div>
     </div>
   );

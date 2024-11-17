@@ -33,6 +33,9 @@ const WhyInvest = () => {
                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
               </svg>
             }
+            title="Trusted Quality"
+            subtitle="Managed by reputable hotel brands"
+            description="Our condotels are managed by internationally recognized hotel brands, ensuring consistent quality maintenance, professional service standards, and a strong market reputation. This partnership guarantees that your investment is maintained to the highest industry standards, potentially increasing property value over time."
           >
             <CanvasRevealEffect
               animationSpeed={5}
@@ -43,14 +46,6 @@ const WhyInvest = () => {
               ]}
               dotSize={3}
             />
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 gap-4">
-              <h2 className="text-xl font-bold text-white">Trusted Quality</h2>
-              <p className="text-white text-center">
-                Managed by reputable hotel brands, ensuring quality maintenance
-                and reputation.
-              </p>
-            </div>
           </Card>
 
           <Card
@@ -73,6 +68,9 @@ const WhyInvest = () => {
                 <path d="m16.71 13.88.7.71-2.82 2.82"></path>
               </svg>
             }
+            title="Fractional Ownership"
+            subtitle="Accessible real estate investment"
+            description="Through innovative tokenization technology, we've made luxury real estate investment accessible to everyone. Start with a smaller investment and gradually build your portfolio. This revolutionary approach eliminates traditional barriers to entry while maintaining all the benefits of property ownership."
           >
             <CanvasRevealEffect
               animationSpeed={3}
@@ -83,15 +81,6 @@ const WhyInvest = () => {
               ]}
               dotSize={2}
             />
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 gap-4">
-              <h2 className="text-xl font-bold text-white">
-                Fractional Ownership
-              </h2>
-              <p className="text-white text-center">
-                Ownership without massive capital outlay through tokenization.
-              </p>
-            </div>
           </Card>
         </div>
       </div>
@@ -101,9 +90,15 @@ const WhyInvest = () => {
 
 const Card = ({
   icon,
+  title,
+  subtitle,
+  description,
   children,
 }: {
   icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  description: string;
   children?: React.ReactNode;
 }) => {
   const [hovered, setHovered] = React.useState(false);
@@ -123,17 +118,30 @@ const Card = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="h-full w-full absolute inset-0"
           >
             {children}
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+              <p className="text-white text-center leading-relaxed">
+                {description}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 h-full flex items-center justify-center">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full flex items-center justify-center bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] bg-clip-text">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-4">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200">
           {icon}
         </div>
+        <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200">
+          {title}
+        </h2>
+        <p className="text-center text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200">
+          {subtitle}
+        </p>
       </div>
     </div>
   );

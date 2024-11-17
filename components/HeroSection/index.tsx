@@ -52,7 +52,15 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="mt-8 sm:mt-10 flex justify-center px-4"
               >
-                <RainbowButton className="w-full sm:w-auto">
+                <RainbowButton
+                  className="w-full sm:w-auto"
+                  onClick={() => {
+                    window.open(
+                      "https://marketplace-gold-rho.vercel.app/",
+                      "_blank"
+                    );
+                  }}
+                >
                   Start Investing
                 </RainbowButton>
               </motion.div>
