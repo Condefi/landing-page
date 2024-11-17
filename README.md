@@ -1,3 +1,6 @@
+> All code and repositories for the project were created during the hackathon, with prior preparations limited to ideation, team formation, and landing page setup for idea feedback. The rapid development of a substantial codebase was made possible solely due to the expertise of the team members and the utilization of modern tools, including AI-driven development technologies.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
