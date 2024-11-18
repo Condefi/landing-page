@@ -1,6 +1,7 @@
 "use client";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { AnimatePresence, motion } from "framer-motion";
+import { Plus, Pointer, Shield, Timer } from "lucide-react";
 import React from "react";
 
 const WhyInvest = () => {
@@ -17,22 +18,7 @@ const WhyInvest = () => {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <Card
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-8 h-8 text-blue-500"
-              >
-                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-              </svg>
-            }
+            icon={<Shield className="w-8 h-8 text-blue-500" />}
             title="Trusted Quality"
             subtitle="Managed by reputable hotel brands"
             description="Our condotels are managed by internationally recognized hotel brands, ensuring consistent quality maintenance, professional service standards, and a strong market reputation. This partnership guarantees that your investment is maintained to the highest industry standards, potentially increasing property value over time."
@@ -49,25 +35,7 @@ const WhyInvest = () => {
           </Card>
 
           <Card
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-8 h-8 text-blue-500"
-              >
-                <circle cx="8" cy="8" r="6"></circle>
-                <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
-                <path d="M7 6h1v4"></path>
-                <path d="m16.71 13.88.7.71-2.82 2.82"></path>
-              </svg>
-            }
+            icon={<Timer className="w-8 h-8 text-blue-500" />}
             title="Fractional Ownership"
             subtitle="Accessible real estate investment"
             description="Through innovative tokenization technology, we've made luxury real estate investment accessible to everyone. Start with a smaller investment and gradually build your portfolio. This revolutionary approach eliminates traditional barriers to entry while maintaining all the benefits of property ownership."
@@ -108,10 +76,10 @@ const Card = ({
       onMouseLeave={() => setHovered(false)}
       className="border border-black/[0.2] group/canvas-card flex flex-col items-center justify-start dark:border-white/[0.2] max-w-lg w-full mx-auto p-4 relative h-[30rem]"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-blue-500" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-blue-500" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-blue-500" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-blue-500" />
+      <Plus className="absolute h-6 w-6 -top-3 -left-3 text-blue-500" />
+      <Plus className="absolute h-6 w-6 -bottom-3 -left-3 text-blue-500" />
+      <Plus className="absolute h-6 w-6 -top-3 -right-3 text-blue-500" />
+      <Plus className="absolute h-6 w-6 -bottom-3 -right-3 text-blue-500" />
 
       <AnimatePresence>
         {hovered && (
@@ -132,7 +100,7 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-4">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-1">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200">
           {icon}
         </div>
@@ -142,24 +110,14 @@ const Card = ({
         <p className="text-center text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200">
           {subtitle}
         </p>
+        <div className="absolute bottom-4 flex flex-col items-center  group-hover/canvas-card:opacity-0 transition-opacity bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-transparent bg-clip-text">
+          <Pointer className="w-5 h-5 opacity-30 dark:opacity-50 text-blue-500" />
+          <span className="text-md font-semibold opacity-30 dark:opacity-50 text-blue-500">
+            Hover me
+          </span>
+        </div>
       </div>
     </div>
-  );
-};
-
-const Icon = ({ className, ...rest }: any) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className={className}
-      {...rest}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-    </svg>
   );
 };
 

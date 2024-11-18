@@ -2,7 +2,13 @@
 
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { AnimatePresence, motion } from "framer-motion";
-import { BarChart3, BookOpen, Briefcase, Building2 } from "lucide-react";
+import {
+  BarChart3,
+  BookOpen,
+  Briefcase,
+  Building2,
+  Pointer,
+} from "lucide-react";
 import React from "react";
 
 const Benefits = () => {
@@ -139,7 +145,7 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-4">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center gap-1">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200">
           {icon}
         </div>
@@ -153,6 +159,22 @@ const Card = ({
         <p className="text-center text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] group-hover/canvas-card:opacity-0 transition duration-200">
           {subtitle}
         </p>
+        <motion.div
+          animate={{
+            y: [0, -3, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-4 flex flex-col items-center group-hover/canvas-card:opacity-0 transition-opacity bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-transparent bg-clip-text"
+        >
+          <Pointer className="w-5 h-5 opacity-30 dark:opacity-50 text-blue-500" />
+          <span className="text-md font-semibold opacity-30 dark:opacity-50 text-blue-500">
+            Hover me
+          </span>
+        </motion.div>
       </div>
     </div>
   );
